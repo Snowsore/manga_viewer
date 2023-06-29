@@ -11,7 +11,9 @@ export default function Home() {
 }
 
 const ImageCovers = async (props) => {
-  const covers = fs.readdirSync(path.join("public", "mangas"));
+  const covers = fs
+    .readdirSync(path.join("public", "mangas"))
+    .filter((file) => file != ".gitignore");
 
   return covers.map((cover, index) => <ImageCover key={index} src={cover} />);
 };
