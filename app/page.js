@@ -1,3 +1,7 @@
+import Image from "next/image";
+import fs from "fs";
+import path from "path";
+
 export default function Home() {
   return (
     <main>
@@ -18,7 +22,12 @@ const ImageCover = async (props) => {
 
   return (
     <a href={`gallery/${src}`}>
-      <img src={`mangas/${src}/${cover}`} alt="Boo" />
+      <Image
+        src={`/mangas/${src}/${cover}`}
+        width={2000}
+        height={2000}
+        alt="Boo"
+      />
     </a>
   );
 };
